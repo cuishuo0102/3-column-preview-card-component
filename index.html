@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | 3-column preview card component</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap-grid.min.css">
+  <style>
+    /*
+      reset
+    */
+    body {
+      margin: 0;
+    }
+
+    :root {
+      /*
+        primary
+      */
+      --color-bright-orange: hsl(31, 77%, 52%);
+      --color-dark-cyan: hsl(184, 100%, 22%);
+      --color-very-dark-cyan: hsl(179, 100%, 13%);
+
+      /*
+        neutral
+      */
+      --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+      --color-very-light-gray: hsl(0, 0%, 95%);
+    }
+
+    .page {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      background-color: var(--color-very-light-gray);
+      padding: 0.05px;
+    }
+
+    .vehicle-introductions {
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .row {
+      height: 100%;
+    }
+
+    .vehicle-introduction {
+      margin: 0;
+      padding: 52px;
+    }
+
+    .vehicle-introduction:nth-child(1) {
+      background-color: var(--color-bright-orange);
+    }
+
+    .vehicle-introduction:nth-child(2) {
+      background-color: var(--color-dark-cyan);
+    }
+
+    .vehicle-introduction:nth-child(3) {
+      background-color: var(--color-very-dark-cyan);
+    }
+
+    .vehicle-introduction:nth-child(1) .vehicle-type-icon {
+      background-image: url(./images/icon-sedans.svg);
+    }
+
+    .vehicle-introduction:nth-child(2) .vehicle-type-icon {
+      background-image: url(./images/icon-suvs.svg);
+    }
+
+    .vehicle-introduction:nth-child(3) .vehicle-type-icon {
+      background-image: url(./images/icon-luxury.svg);
+    }
+
+    .vehicle-introduction:nth-child(1) .learn-more {
+      color: var(--color-bright-orange);
+    }
+
+    .vehicle-introduction:nth-child(2) .learn-more {
+      color: var(--color-dark-cyan);
+    }
+
+    .vehicle-introduction:nth-child(3) .learn-more {
+      color: var(--color-very-dark-cyan);
+    }
+
+    .vehicle-type-icon {
+      height: 75px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+
+    .vehicle-type-name {
+      font-family: 'Big Shoulders Display', cursive;
+      font-size: 40px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .vehicle-type-desc {
+      padding-top: 25px;
+      line-height: 24px;
+      color: var(--color-transparent-white);
+      font-family: 'Lexend Deca', sans-serif;
+    }
+
+    .learn-more {
+      display: block;
+      margin-top: 84px;
+      height: 44px;
+      width: 144px;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      font-family: 'Lexend Deca', sans-serif;
+      box-shadow: 0 0 45px 15px rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (min-width: 1024px) {
+      .vehicle-introductions {
+        width: 920px;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -46%);
+      }
+
+      .attribution {
+        position: absolute;
+        bottom: 0.5em;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      .vehicle-introductions {
+        margin: 88px 24px;
+      }
+
+      .vehicle-introduction {
+        height: 440px;
+        padding: 48px 60px;
+      }
+
+      .learn-more {
+        margin-top: 32px;
+      }
+    }
+
+    .learn-more:hover {
+      border: 2px solid white;
+      background-color: inherit;
+      color: #fff !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="vehicle-introductions">
+      <div class="row">
+        <div class="vehicle-introduction col-12 col-lg-4">
+          <div class="vehicle-type-icon"></div>
+          <div class="vehicle-type-name">Sedans</div>
+          <div class="vehicle-type-desc">
+            Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city 
+            or on your next road trip.
+          </div>
+          <button class="learn-more">Learn More</button>
+        </div>
+        <div class="vehicle-introduction col-12 col-lg-4">
+          <div class="vehicle-type-icon"></div>
+          <div class="vehicle-type-name">SUVs</div>
+          <div class="vehicle-type-desc">
+            Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation 
+            and off-road adventures.
+          </div>
+          <button class="learn-more">Learn More</button>
+        </div>
+        <div class="vehicle-introduction col-12 col-lg-4">
+          <div class="vehicle-type-icon"></div>
+          <div class="vehicle-type-name">Luxury</div>
+          <div class="vehicle-type-desc">
+            Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury 
+            rental and arrive in style.
+          </div>
+          <button class="learn-more">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">cuishuo0102</a>.
+    </div>
+  </div>
+  
+</body>
+</html>
