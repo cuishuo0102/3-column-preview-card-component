@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/cuishuo0102/3-column-preview-card-component)
-- Live Site URL: [Github Pages](https://cuishuo0102.github.com/3-column-preview-card-component)
+- Live Site URL: [Github Pages](https://cuishuo0102.github.io/3-column-preview-card-component)
 
 ## My process
 
