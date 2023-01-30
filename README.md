@@ -64,6 +64,7 @@ There are three possible conditions that CSS properties don't get applied. In Ch
 - [Bootstrap Grid](https://getbootstrap.com/docs/5.3/layout/grid) - Bootstrap grid system provides non-gutter grid system and semantic class names.
 - [Find invalid, overridden, inactive, and other CSS](https://developer.chrome.com/docs/devtools/css/issues/) - This is an amazing article which helped me finally understand the reasons that CSS properties not get applied and give a clear way to identify the reason using devtool. I'd recommend it to anyone still learning this concept.
 - [Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) - This is a full list of pseudo class in CSS, taking an overview helps me know how many are they and make them can be recalled during development.
+- [width:100VW Side Scroll behavior (& fix)](https://sbx.webflow.io/100vw-scrollbars) - This article helped me understand why the scrollbar is showing while using 100vw. It clearly point out this browser bug and give the way to fix it.
 
 ## Author
 
