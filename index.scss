@@ -1,0 +1,146 @@
+$mobile-s-breakpoint: 425px;
+$laptop-breakpoint: 1024px;
+
+/*
+  reset
+*/
+body {
+  margin: 0;
+}
+
+:root {
+  /*
+    primary
+  */
+  --color-bright-orange: hsl(31, 77%, 52%);
+  --color-dark-cyan: hsl(184, 100%, 22%);
+  --color-very-dark-cyan: hsl(179, 100%, 13%);
+
+  /*
+    neutral
+  */
+  --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --color-very-light-gray: hsl(0, 0%, 95%);
+}
+
+.page {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: var(--color-very-light-gray);
+  padding: 0.05px;
+}
+
+.vehicle-introductions {
+  overflow: hidden;
+  border-radius: 8px;
+
+  @media screen and (max-width: $mobile-s-breakpoint) {
+    margin: 88px 24px;
+  }
+
+  @media screen and (min-width: $laptop-breakpoint) {
+    width: 920px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -46%);
+  }
+}
+
+.row {
+  height: 100%;
+}
+
+.vehicle-introduction {
+  margin: 0;
+  padding: 52px;
+
+  @media screen and (max-width: $mobile-s-breakpoint) {
+    height: 440px;
+    padding: 48px 60px;
+  }
+
+  .vehicle-type-icon {
+    height: 75px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  .vehicle-type-name {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .vehicle-type-desc {
+    padding-top: 25px;
+    line-height: 24px;
+    color: var(--color-transparent-white);
+    font-family: 'Lexend Deca', sans-serif;
+  }
+
+  .learn-more {
+    display: block;
+    margin-top: 84px;
+    height: 44px;
+    width: 144px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-family: 'Lexend Deca', sans-serif;
+    box-shadow: 0 0 45px 15px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+
+    @media screen and (max-width: $mobile-s-breakpoint) {
+      margin-top: 32px;
+    }
+
+    &:hover {
+      border: 2px solid white;
+      background-color: inherit;
+      color: #fff !important;
+    }
+  }
+
+  @mixin child-variant($color, $icon) {
+    background-color: $color;
+    
+    .vehicle-type-icon {
+      background-image: url($icon);
+    }
+
+    .learn-more {
+      color: $color;
+    }
+  }
+
+  &:nth-child(1) {
+    @include child-variant(var(--color-bright-orange), "./images/icon-sedans.svg");
+  }
+
+  &:nth-child(2) {
+    @include child-variant(var(--color-dark-cyan), "./images/icon-suvs.svg");
+  }
+
+  &:nth-child(3) {
+    @include child-variant(var(--color-very-dark-cyan), "./images/icon-luxury.svg");
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  @media screen and (min-width: $laptop-breakpoint) {
+    position: absolute;
+    bottom: 0.5em;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
